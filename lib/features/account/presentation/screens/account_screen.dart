@@ -23,7 +23,7 @@ class AccountScreen extends ConsumerWidget {
           child: Column(
             children: [
               const Header(),
-              const SizedBox(height: 20),
+              const SizedBox(height: AppDimens.blocksSpacing),
               buildAction(ref),
 
               const SectionTitle(title: 'Вы смотрели'),
@@ -41,7 +41,9 @@ class AccountScreen extends ConsumerWidget {
                 itemCount: 10,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: AppDimens.betweenSliderElements,
+                    ),
                     child: ProductItem(index: index),
                   );
                 },
@@ -68,7 +70,7 @@ class AccountScreen extends ConsumerWidget {
             ),
           ),
         ),
-        const SizedBox(width: 10),
+        const SizedBox(width: AppDimens.betweenBlocksRow),
 
         const Expanded(
           child: ActionCard(
@@ -77,7 +79,7 @@ class AccountScreen extends ConsumerWidget {
             subtitle: 'Заказать снова',
           ),
         ),
-        const SizedBox(width: 10),
+        const SizedBox(width: AppDimens.betweenBlocksRow),
 
         const Expanded(
           child: ActionCard(

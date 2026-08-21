@@ -35,18 +35,14 @@ class _DetailScreenState extends State<DetailScreen> {
             child: Column(
               children: [
                 const DetalHeader(),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppDimens.blocksSpacing),
                 const DetailSlider(),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppDimens.blocksSpacing),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    buildTitle,
-                    const SizedBox(width: 16),
-                    const Counter(),
-                  ],
+                  children: [buildTitle, const Counter()],
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppDimens.blocksSpacing),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -93,7 +89,7 @@ class _DetailScreenState extends State<DetailScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: AppDimens.blocksSpacing),
                 const Description(),
                 const SizedBox(height: 70),
               ],

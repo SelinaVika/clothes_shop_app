@@ -8,6 +8,8 @@ class AppDimens {
   static const double spacingXXL = 70.0;
   static const double wrapSpacing = 10.0;
   static const double blocksSpacing = 20.0;
+  static const double betweenBlocksRow = 10.0;
+  static const double betweenSliderElements = 4.0;
 
   // Sizes
   static const double avatarSize = 40.0;
