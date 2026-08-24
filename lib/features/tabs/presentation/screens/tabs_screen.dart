@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../account/presentation/screens/account_screen.dart';
+import '../../../cart/screens/cart_screen.dart';
 import '../../../favorite/presentation/screens/wishlist_screen.dart';
 import '../../controller/tabs_controller.dart';
 import '../widgets/tab_bar_widget.dart';
@@ -56,7 +57,7 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
                 children: const [
                   HomeScreen(),
                   WishlistScreen(),
-
+                  CartScreen(),
                   AccountScreen(),
                 ],
               ),
@@ -68,7 +69,12 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
                 child: CustomBottomNavBar(
                   currentIndex: currentIndex,
                   onTap: _onTabSelected,
-                  items: const [Icons.home, Icons.favorite, Icons.propane],
+                  items: const [
+                    Icons.home,
+                    Icons.favorite,
+                    Icons.shopping_basket_rounded,
+                    Icons.propane,
+                  ],
                 ),
               ),
             ),
