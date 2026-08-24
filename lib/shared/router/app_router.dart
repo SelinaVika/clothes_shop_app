@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/categories/screens/categories_screen.dart';
 import '../../features/detail/presentation/screens/detail_screen.dart';
 import '../../features/onboarding/presentation/screens/onboarding_screen.dart';
 import '../../features/tabs/presentation/screens/tabs_screen.dart';
@@ -35,4 +36,13 @@ class DetailRoute extends GoRouteData with $DetailRoute {
   @override
   Widget build(BuildContext context, GoRouterState state) =>
       DetailScreen(id: id);
+}
+
+@TypedGoRoute<CategoriesRoute>(path: '/categories')
+class CategoriesRoute extends GoRouteData with $CategoriesRoute {
+  const CategoriesRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const CategoriesScreen();
 }

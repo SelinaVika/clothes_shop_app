@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/theme/app_metrics.dart';
 import '../../../../gen/assets.gen.dart';
 import '../../../../shared/presentation/widgets/section_title.dart';
+import '../../../../shared/router/app_router.dart';
 
 class CategorySlider extends StatelessWidget {
   const CategorySlider({super.key});
@@ -11,9 +12,14 @@ class CategorySlider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: AppDimens.wrapSpacing),
-          child: SectionTitle(title: 'Категории'),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppDimens.wrapSpacing,
+          ),
+          child: SectionTitle(
+            title: 'Категории',
+            onSeeAllTap: () => const CategoriesRoute().push(context),
+          ),
         ),
         SizedBox(
           height: 50,

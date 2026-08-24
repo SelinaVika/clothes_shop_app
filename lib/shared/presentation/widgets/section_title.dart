@@ -3,16 +3,10 @@ import 'package:flutter/material.dart';
 import '../../../core/theme/app_metrics.dart';
 
 class SectionTitle extends StatelessWidget {
-  const SectionTitle({
-    super.key,
-    this.title = 'Category',
-    this.onSeeAllTap,
-    this.showSeeAll = true,
-  });
+  const SectionTitle({super.key, this.title = 'Category', this.onSeeAllTap});
 
   final String title;
   final VoidCallback? onSeeAllTap;
-  final bool showSeeAll;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +26,7 @@ class SectionTitle extends StatelessWidget {
               ),
             ),
           ),
-          if (showSeeAll)
+          if (onSeeAllTap != null)
             GestureDetector(
               onTap: onSeeAllTap,
               behavior: HitTestBehavior.opaque,
