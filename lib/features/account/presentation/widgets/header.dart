@@ -7,41 +7,58 @@ class Header extends StatelessWidget {
 
   void showMenu(BuildContext context) {
     showModalBottomSheet(
-      enableDrag: false,
+      context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
-      barrierColor: Colors.transparent,
-      context: context,
-      builder: (_) => SizedBox.expand(
-        child: Padding(
-          padding: MediaQuery.of(context).viewInsets,
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-            child: Container(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                height: 200,
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                  color: Colors.amberAccent,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(25),
-                    topRight: Radius.circular(25),
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 10,
-                      color: Colors.amberAccent,
-                      offset: Offset(0, -2),
+      builder: (context) {
+        return BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+          child: Container(
+            decoration: const BoxDecoration(
+              color: Color(0xFFF2F2F7),
+              borderRadius: BorderRadius.vertical(top: Radius.circular(28)),
+            ),
+            child: SafeArea(
+              top: false,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const SizedBox(height: 12),
+                  Container(
+                    width: 40,
+                    height: 5,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFC7C7CC),
+                      borderRadius: BorderRadius.circular(3),
                     ),
-                  ],
-                ),
-                child: const Text('data'),
+                  ),
+                  const SizedBox(height: 20),
+
+                  _MenuItem(
+                    icon: Icons.settings_outlined,
+                    title: 'Настройки',
+                    onTap: () => Navigator.pop(context),
+                  ),
+
+                  _MenuItem(
+                    icon: Icons.help_outline_rounded,
+                    title: 'Помощь',
+                    onTap: () => Navigator.pop(context),
+                  ),
+                  _MenuItem(
+                    icon: Icons.logout_rounded,
+                    title: 'Выйти',
+                    isDestructive: true,
+                    onTap: () => Navigator.pop(context),
+                  ),
+
+                  const SizedBox(height: 16),
+                ],
               ),
             ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 
@@ -62,7 +79,6 @@ class Header extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 12),
-
         const Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -83,7 +99,6 @@ class Header extends StatelessWidget {
             ],
           ),
         ),
-
         Stack(
           children: [
             IconButton(
@@ -117,14 +132,57 @@ class Header extends StatelessWidget {
             ),
           ],
         ),
-
         IconButton(
-          onPressed: () {
-            showMenu(context);
-          },
+          onPressed: () => showMenu(context),
           icon: const Icon(Icons.menu, color: Color(0xFF1C1C1E), size: 26),
         ),
       ],
+    );
+  }
+}
+
+class _MenuItem extends StatelessWidget {
+  const _MenuItem({
+    required this.icon,
+    required this.title,
+    required this.onTap,
+    this.isDestructive = false,
+  });
+
+  final IconData icon;
+  final String title;
+  final VoidCallback onTap;
+  final bool isDestructive;
+
+  @override
+  Widget build(BuildContext context) {
+    final color = isDestructive
+        ? const Color(0xFFFF3B30)
+        : const Color(0xFF1C1C1E);
+
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+          child: Row(
+            children: [
+              Icon(icon, color: color, size: 24),
+              const SizedBox(width: 16),
+              Text(
+                title,
+                style: TextStyle(
+                  color: color,
+                  fontSize: 17,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

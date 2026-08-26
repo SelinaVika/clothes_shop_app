@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../core/theme/app_metrics.dart';
 import '../../home/presentation/widgets/search.dart';
-import '../widgets/category.dart';
+import '../widgets/category_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
@@ -41,7 +41,7 @@ class CategoriesScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {},
-                    child: const Category(title: 'Женская одежда'),
+                    child: const CategoryItem(title: 'Женская одежда'),
                   );
                 },
               ),

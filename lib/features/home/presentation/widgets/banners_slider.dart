@@ -25,10 +25,12 @@ class BannersSlider extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(24),
                   gradient: const LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                     colors: [
-                      Color.fromARGB(255, 144, 162, 243),
-                      Color.fromARGB(255, 53, 75, 122),
-                      Color.fromARGB(255, 8, 13, 92),
+                      Color(0xFF6B8CFF),
+                      Color(0xFF3A4F9C),
+                      Color(0xFF1A237E),
                     ],
                   ),
                 ),
@@ -48,6 +50,21 @@ class BannersSlider extends StatelessWidget {
                     ),
                     ElevatedButton(
                       onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        foregroundColor: const Color(0xFF1A237E),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 20,
+                          vertical: 10,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(14),
+                        ),
+                        textStyle: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
                       child: const Text('Подробнее'),
                     ),
                   ],

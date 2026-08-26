@@ -155,6 +155,31 @@ class ProductItem extends StatelessWidget {
                       ),
                     ],
                   ),
+
+                  const SizedBox(height: 10),
+
+                  // Кнопка «В корзину» в стиле Ozon
+                  SizedBox(
+                    width: double.infinity,
+                    height: 36,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepOrange, // синий Ozon
+                        foregroundColor: Colors.white,
+                        elevation: 0,
+                        padding: EdgeInsets.zero,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        textStyle: const TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      child: const Text('В корзину'),
+                    ),
+                  ),
                 ],
               ),
             ),

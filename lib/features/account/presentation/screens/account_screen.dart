@@ -33,7 +33,7 @@ class AccountScreen extends ConsumerWidget {
         LayoutBuilder(
           builder: (context, constraints) {
             return SizedBox(
-              height: 290,
+              height: 330,
               child: ListView.builder(
                 padding: const EdgeInsets.only(bottom: 10),
                 itemExtent: constraints.maxWidth / 2.5,

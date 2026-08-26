@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/theme/app_metrics.dart';
 import '../../../../shared/presentation/widgets/product_item.dart';
 import '../../../../shared/presentation/widgets/section_title.dart';
+import '../../tabs/controller/tabs_controller.dart';
 
 class CartScreen extends ConsumerWidget {
   const CartScreen({super.key});
@@ -38,7 +39,9 @@ class CartScreen extends ConsumerWidget {
               SizedBox(
                 height: 48,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    ref.read(tabsControllerProvider.notifier).set(0);
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.deepOrange,
                     foregroundColor: Colors.white,
@@ -61,7 +64,7 @@ class CartScreen extends ConsumerWidget {
         LayoutBuilder(
           builder: (context, constraints) {
             return SizedBox(
-              height: 290,
+              height: 330,
               child: ListView.builder(
                 padding: const EdgeInsets.only(bottom: 10),
                 itemExtent: constraints.maxWidth / 2.5,

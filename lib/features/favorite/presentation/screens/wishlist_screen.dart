@@ -31,7 +31,7 @@ class WishlistScreen extends StatelessWidget {
               shrinkWrap: true,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                mainAxisExtent: 310,
+                mainAxisExtent: 360,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 14,
               ),

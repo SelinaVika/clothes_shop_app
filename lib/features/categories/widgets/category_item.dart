@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../gen/assets.gen.dart';
 
-class Category extends StatelessWidget {
-  const Category({super.key, required this.title});
+class CategoryItem extends StatelessWidget {
+  const CategoryItem({super.key, required this.title});
 
   final String title;
 

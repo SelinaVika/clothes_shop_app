@@ -32,34 +32,6 @@ class MainAppbar extends StatelessWidget {
               ),
             ],
           ),
-          const Spacer(),
-          Container(
-            height: 60,
-            width: 60,
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 235, 236, 241),
-              borderRadius: BorderRadius.circular(30),
-            ),
-            child: const Icon(
-              Icons.notifications,
-              color: Color.fromARGB(255, 68, 67, 67),
-              size: 30,
-            ),
-          ),
-          const SizedBox(width: 5),
-          Container(
-            height: 60,
-            width: 60,
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 235, 236, 241),
-              borderRadius: BorderRadius.circular(30),
-            ),
-            child: const Icon(
-              Icons.shopping_bag_outlined,
-              color: Color.fromARGB(255, 68, 67, 67),
-              size: 30,
-            ),
-          ),
         ],
       ),
     );
