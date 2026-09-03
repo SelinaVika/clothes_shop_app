@@ -2,6 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import '../../../../shared/router/app_router.dart';
+
 class Header extends StatelessWidget {
   const Header({super.key});
 
@@ -37,7 +39,7 @@ class Header extends StatelessWidget {
                   _MenuItem(
                     icon: Icons.settings_outlined,
                     title: 'Настройки',
-                    onTap: () => Navigator.pop(context),
+                    onTap: () => const SettingsRoute().push(context),
                   ),
 
                   _MenuItem(
@@ -102,7 +104,7 @@ class Header extends StatelessWidget {
         Stack(
           children: [
             IconButton(
-              onPressed: () {},
+              onPressed: () => const NotificationsRoute().push(context),
               icon: const Icon(
                 Icons.chat_bubble_outline,
                 color: Color(0xFF1C1C1E),

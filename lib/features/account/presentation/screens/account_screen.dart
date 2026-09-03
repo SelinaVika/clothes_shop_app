@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/theme/app_metrics.dart';
-import '../../../../shared/presentation/widgets/product_item.dart';
-import '../../../../shared/presentation/widgets/section_title.dart';
+import '../../../../shared/presentation/widgets/products_slider.dart';
 import '../../../tabs/controller/tabs_controller.dart';
 import '../widgets/action_card.dart';
 import '../widgets/header.dart';
@@ -25,30 +24,10 @@ class AccountScreen extends ConsumerWidget {
               const Header(),
               const SizedBox(height: 20),
               buildAction(ref),
-
-              const SectionTitle(title: 'Вы смотрели'),
             ],
           ),
         ),
-        LayoutBuilder(
-          builder: (context, constraints) {
-            return SizedBox(
-              height: 330,
-              child: ListView.builder(
-                padding: const EdgeInsets.only(bottom: 10),
-                itemExtent: constraints.maxWidth / 2.5,
-                scrollDirection: Axis.horizontal,
-                itemCount: 10,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4),
-                    child: ProductItem(index: index),
-                  );
-                },
-              ),
-            );
-          },
-        ),
+        const ProductsSlider(title: 'Вы смотрели'),
       ],
     );
   }
@@ -73,8 +52,8 @@ class AccountScreen extends ConsumerWidget {
         const Expanded(
           child: ActionCard(
             icon: Icons.shopping_bag_outlined,
-            title: 'Покупки',
-            subtitle: 'Заказать снова',
+            title: 'Заказы ',
+            subtitle: 'Нет заказов',
           ),
         ),
         const SizedBox(width: 10),

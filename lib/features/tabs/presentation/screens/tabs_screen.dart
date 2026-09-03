@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../account/presentation/screens/account_screen.dart';
-import '../../../cart/screens/cart_screen.dart';
+import '../../../cart/presentation/screens/cart_screen.dart';
 import '../../../favorite/presentation/screens/wishlist_screen.dart';
 import '../../controller/tabs_controller.dart';
 import '../widgets/tab_bar_widget.dart';
