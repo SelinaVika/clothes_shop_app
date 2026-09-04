@@ -1,9 +1,9 @@
-import 'package:clothes_shop_app/features/notifications/presentation/screens/notifications_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
-import '../../features/categories/screens/categories_screen.dart';
+import '../../features/categories/presentation/screens/categories_screen.dart';
+import '../../features/category/presentation/screens/category_screen.dart';
 import '../../features/detail/presentation/screens/detail_screen.dart';
+import '../../features/notifications/presentation/screens/notifications_screen.dart';
 import '../../features/onboarding/presentation/screens/onboarding_screen.dart';
 import '../../features/settings/presentation/screens/settings_screen.dart';
 import '../../features/tabs/presentation/screens/tabs_screen.dart';
@@ -65,4 +65,13 @@ class NotificationsRoute extends GoRouteData with $NotificationsRoute {
   @override
   Widget build(BuildContext context, GoRouterState state) =>
       const NotificationsScreen();
+}
+
+@TypedGoRoute<CategoryScreenRoute>(path: '/category')
+class CategoryScreenRoute extends GoRouteData with $CategoryScreenRoute {
+  const CategoryScreenRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const CategoryScreen();
 }

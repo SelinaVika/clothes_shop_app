@@ -31,43 +31,46 @@ class CategorySlider extends StatelessWidget {
             itemExtent: 170,
             itemCount: 5,
             itemBuilder: (BuildContext context, int index) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4),
-                child: Container(
-                  padding: const EdgeInsets.all(4),
-                  decoration: BoxDecoration(
-                    color: const Color(0xFFEBECF1),
-                    borderRadius: BorderRadius.circular(35),
-                  ),
-                  child: Row(
-                    children: [
-                      CircleAvatar(
-                        backgroundImage: Assets.images.img0.provider(),
-                        backgroundColor: const Color.fromARGB(255, 167, 2, 2),
-                        radius: 18,
-                      ),
-                      const SizedBox(width: 4),
-                      const Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            'Dresses',
-                            style: TextStyle(
-                              fontWeight: FontWeight(500),
-                              fontSize: 15,
+              return GestureDetector(
+                onTap: () => const CategoryScreenRoute().push(context),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 4),
+                  child: Container(
+                    padding: const EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFEBECF1),
+                      borderRadius: BorderRadius.circular(35),
+                    ),
+                    child: Row(
+                      children: [
+                        CircleAvatar(
+                          backgroundImage: Assets.images.img0.provider(),
+                          backgroundColor: const Color.fromARGB(255, 167, 2, 2),
+                          radius: 18,
+                        ),
+                        const SizedBox(width: 4),
+                        const Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Dresses',
+                              style: TextStyle(
+                                fontWeight: FontWeight(500),
+                                fontSize: 15,
+                              ),
                             ),
-                          ),
-                          Text(
-                            'From 19.99',
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Color.fromARGB(255, 110, 110, 110),
+                            Text(
+                              'From 19.99',
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Color.fromARGB(255, 110, 110, 110),
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               );

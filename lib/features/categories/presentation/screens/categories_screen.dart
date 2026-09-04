@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-
-import '../../../core/theme/app_metrics.dart';
-import '../../home/presentation/widgets/search.dart';
+import '../../../../core/theme/app_metrics.dart';
+import '../../../../shared/presentation/widgets/search_on_page.dart';
 import '../widgets/category_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
@@ -14,16 +12,7 @@ class CategoriesScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Row(
-              children: [
-                IconButton(
-                  onPressed: context.pop,
-                  icon: const Icon(Icons.arrow_back, size: 20),
-                  color: const Color(0xFF1A1A1A),
-                ),
-                const Expanded(child: Search()),
-              ],
-            ),
+            const SearchOnPage(),
             const SizedBox(height: AppDimens.blocksSpacing),
             Padding(
               padding: const EdgeInsets.symmetric(
